@@ -25,3 +25,16 @@ WHERE
 AND rental_duration = 5
 ORDER BY
     title;
+
+-- Create a Temporary TABLE of Movies length less than 60
+    SELECT
+    film_id,
+    title,
+    length 
+INTO TEMP TABLE short_film
+FROM
+    film
+WHERE
+    length < 60
+ORDER BY
+    title;
